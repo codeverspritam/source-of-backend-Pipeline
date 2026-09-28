@@ -33,8 +33,4 @@ app.delete("/notes/:index", (req, res) => {
 });
 
 
-
-
-
-
 module.exports = app;
