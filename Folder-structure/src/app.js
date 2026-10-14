@@ -21,7 +21,8 @@ app.get("/notes", (req, res) => {
     notes: notes,
   });
 });
-
+//mongodb+srv://yt:<db_password>@yt-complete-backend.rzyolbr.mongodb.net/
+//XxLA7H80WeAD1P7l
 app.get("/");
 /*delete/notes ferom index*/
 app.delete("/notes/:index", (req, res) => {
