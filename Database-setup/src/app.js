@@ -36,5 +36,35 @@ app.post("/notes", async (req, res) => {
     message: "Note created",
   });
 });
+// app.delete("/notes", async (req, res) => {
+//   const data = req.body;
+//   await noteModel.create({
+//     title: data.title,
+//     description: data.description,
+//   });
+//   // hows your day treating you  how are you holding up today
+//   app.get("/notes", async (req, res) => {
+//     const notes = await noteModel.findOne();
+//     res.status(200).json({
+//       message: "Note created",
+//     });
+//   });
+
+//   res.status(201).json({
+//     message: "Note created",
+//   });
+// });
+
+app.delete("/notes/:id", async (req, res) => {
+  const id = req.params.id;
+  await noteModel.findByIdAndDelete({
+    _id: id,
+  });
+  res.status(200).json({
+    message: "Note deleted successfully",
+  });
+});
+
+
 
 module.exports = app;
